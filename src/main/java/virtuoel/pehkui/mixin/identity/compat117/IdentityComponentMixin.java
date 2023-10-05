@@ -1,4 +1,4 @@
-package virtuoel.pehkui.mixin.identity.compat;
+package virtuoel.pehkui.mixin.identity.compat117;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;

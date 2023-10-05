@@ -162,7 +162,7 @@
 		"compat120plus.LlamaEntityMixin",
 		"compat120plus.ProjectileUtilMixin",
 		"compat120plus.SnifferEntityMixin",
-		"identity.compat.IdentityComponentMixin",
+    	"identity.compat117.IdentityComponentMixin",
 		"identity.compat.PlayerEntityMixin",
 		"identity.compat115.IdentityComponentMixin",
 		"identity.compat116.IdentityComponentMixin",

@@ -1,14 +1,23 @@
 package virtuoel.pehkui.util;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Optional;
-
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
+import dev.architectury.event.EventResult;
+import draylar.identity.api.event.IdentitySwapCallback;
 
 public class IdentityCompatibility
 {
+	public static final IdentityCompatibility INSTANCE = new IdentityCompatibility();
+
+	private IdentityCompatibility() {
+		IdentitySwapCallback.EVENT.register((player, to) -> {
+			if (to != null) {
+				ScaleUtils.loadScale(to, player);
+			}
+			return EventResult.pass();
+		});
+	}
+
+	/* OLD STUFF
+
 	private static final boolean IDENTITY_LOADED = ModLoaderUtils.isModLoaded("identity");
 	
 	public static final IdentityCompatibility INSTANCE = new IdentityCompatibility();
@@ -86,5 +95,5 @@ public class IdentityCompatibility
 		}
 		
 		return null;
-	}
+	}*/
 }

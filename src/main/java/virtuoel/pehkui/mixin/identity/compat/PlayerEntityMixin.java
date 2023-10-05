@@ -6,6 +6,8 @@ import org.spongepowered.asm.mixin.Unique;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+
+import draylar.identity.api.PlayerIdentity;
 import virtuoel.pehkui.api.ScaleData;
 import virtuoel.pehkui.api.ScaleType;
 import virtuoel.pehkui.util.CombinedScaleData;
@@ -23,7 +25,7 @@ public abstract class PlayerEntityMixin implements PehkuiEntityExtensions
 	{
 		return new CombinedScaleData(type, (Entity) (Object) this, () ->
 		{
-			final LivingEntity identity = IdentityCompatibility.INSTANCE.getIdentity((PlayerEntity) (Object) this);
+			final LivingEntity identity = PlayerIdentity.getIdentity((PlayerEntity) (Object) this);
 			
 			return identity == null ? pehkui$EMPTY : new ScaleData[] { type.getScaleData(identity) };
 		});

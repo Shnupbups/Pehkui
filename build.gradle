@@ -20,6 +20,18 @@ repositories {
 		url = "https://maven.terraformersmc.com/"
 	}
 	maven {
+		name = "Vini"
+		url = "https://maven.vini2003.dev/releases"
+	}
+	maven {
+		name = "Architectury"
+		url = "https://maven.architectury.dev"
+	}
+	maven {
+		name = "Draylar"
+		url = "https://maven.draylar.dev/releases"
+	}
+	maven {
 		name = "CurseForge"
 		url = "https://minecraft.curseforge.com/api/maven"
 	}
@@ -149,6 +161,10 @@ dependencies {
 		if(project.hasProperty("kanos_config_tag")) {
 			include modApi("com.github.Virtuoel:KanosConfig:${kanos_config_tag}", excludeFabric)
 		}
+	}
+
+	if(project.hasProperty("identity_version")) {
+		modApi("dev.draylar:identity-fabric:${identity_version}")
 	}
 }
 
